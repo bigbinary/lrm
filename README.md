@@ -1,4 +1,4 @@
-lrm stands for "Learn Ruby Motion".
+lrm stands for "Learn RubyMotion".
 
 Jump into any of the episodes and all you need to do is `rake` to see
 the project in action.
