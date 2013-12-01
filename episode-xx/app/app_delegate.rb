@@ -1,10 +1,9 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
+    App::Persistence['authToken'] = nil
+    
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-
-    @languages_controller = LanguagesController.alloc.initWithNibName(nil, bundle:nil)
-    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(@languages_controller)
-
+    @window.rootViewController = LoginController.alloc.init
     @window.makeKeyAndVisible
     true
   end
