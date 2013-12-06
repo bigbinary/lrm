@@ -13,6 +13,7 @@ class AppDelegate
     part = ENV['PART']
     if part.nil?
       puts "using default part"
+      part = '3'
     else
       puts "using part #{part}"
     end
@@ -25,8 +26,6 @@ class AppDelegate
     when '3'
       StandardAppearance.set_named_fonts_and_colors
 
-      Loginv3Controller
-    else
       Loginv3Controller
     end
   end
