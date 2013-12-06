@@ -38,7 +38,7 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
 end
 
 
-class LoginControllerStylesheet < ApplicationStylesheet
+class Loginv3ControllerStylesheet < ApplicationStylesheet
 
   def root_view(st)
     st.background_color = color.brown
@@ -84,11 +84,7 @@ class LoginControllerStylesheet < ApplicationStylesheet
 
   def login_form(st)
     st.frame = {t: 30, w: 200, h: 250}
-    if ipad?
-      st.centered = :both
-    else
-      st.centered = :horizontal
-    end
+    st.centered = :horizontal
   end
 
 end

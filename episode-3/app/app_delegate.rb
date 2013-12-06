@@ -23,9 +23,11 @@ class AppDelegate
     when '2'
       Loginv2Controller
     when '3'
+      StandardAppearance.set_named_fonts_and_colors
+
       Loginv3Controller
     else
-      Loginv2Controller
+      Loginv3Controller
     end
   end
 
