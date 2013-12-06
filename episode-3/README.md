@@ -2,6 +2,8 @@ This episode discusses building login screen using rmq.
 
 
 ```
+VERSION=1 rake
+
 rmq.log :tree
 
 rmq(157498448).style{ |s| s.frame = {l: 100, t: 80, w: 100, h: 30} }

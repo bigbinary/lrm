@@ -4,8 +4,8 @@ class Loginv1Controller < UIViewController
     super
 
     rmq.append(UIView, :login_form).tap do |q| 
-      q.append(UITextField, :email).get
-      q.append(UITextField, :password).get
+      q.append(UITextField, :email)
+      q.append(UITextField, :password)
     end 
 
   end
