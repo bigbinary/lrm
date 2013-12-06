@@ -8,17 +8,24 @@ class AppDelegate
 
   # Usage
   #
-  # VERSION=1 rake 
+  # rake PART=1
   def klass
-    case ENV['VERSION'].to_i
-    when 1
+    part = ENV['PART']
+    if part.nil?
+      puts "using default part"
+    else
+      puts "using part #{part}"
+    end
+
+    case part
+    when '1'
       Loginv1Controller
-    when 2
+    when '2'
       Loginv2Controller
-    when 3
+    when '3'
       Loginv3Controller
     else
-      Loginv3Controller
+      Loginv2Controller
     end
   end
 
