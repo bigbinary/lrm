@@ -7,11 +7,15 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    motion-require (0.0.7)
+    motion-support (0.2.4)
+      motion-require (>= 0.0.6)
     rake (10.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  motion-support
   rake
   ruby_motion_query!
