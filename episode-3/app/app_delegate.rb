@@ -29,6 +29,9 @@ class AppDelegate
     when '4'
       StandardAppearance.set_named_fonts_and_colors
       Loginv4Controller
+    when '5'
+      StandardAppearance.set_named_fonts_and_colors
+      Loginv5Controller
     end
   end
 

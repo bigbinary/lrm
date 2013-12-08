@@ -1,4 +1,4 @@
-class Loginv4Controller < UIViewController
+class Loginv5Controller < UIViewController
 
   def viewDidLoad
     super
@@ -22,6 +22,26 @@ class Loginv4Controller < UIViewController
     else
       handle_valid_submission
     end
+  end
+
+  def handle_valid_submission
+    process_authentication @email.text, App::Persistence['device_token'], @password.text
+  end
+
+  def process_authentication(email, device_token, password)
+    AuthenticationService.new(self, {email: email, device_token: device_token, password: password}).process
+  end
+
+  def handle_login_failed
+    App.alert('login failed')
+  end
+
+  def handle_login_successful
+    App.alert('You are logged in')
+  end
+
+  def handle_server_error
+    App.alert('something went wrong')
   end
 
   def submission_invalid?
