@@ -26,6 +26,9 @@ class AuthenticationService
   private
 
   def handle_response response
+    puts response.body.to_s
+    puts response.status_code.to_s
+
     method =  case response.status_code
               when 401
                 :handle_login_failed
