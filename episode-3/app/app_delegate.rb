@@ -13,7 +13,7 @@ class AppDelegate
     part = ENV['PART']
     if part.nil?
       puts "using default part"
-      part = '4'
+      part = '5'
     else
       puts "using part #{part}"
     end
