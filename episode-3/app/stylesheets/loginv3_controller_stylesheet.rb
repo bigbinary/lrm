@@ -35,6 +35,25 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
     st.background_color = color.tint_color
     st.view.font = font.large
   end
+
+  def standard_button_as_link(st)
+    st.height = 35
+    st.color = color.tint_color
+    st.view.titleLabel.lineBreakMode = NSLineBreakByWordWrapping
+    st.view.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft
+  end
+
+  def standard_label_title(st)
+    st.number_of_lines = :unlimited
+    st.height = 30
+  end
+
+  def standard_label_note(st)
+    st.number_of_lines = :unlimited
+    st.height = 50
+    st.color = color.gray
+  end
+
 end
 
 

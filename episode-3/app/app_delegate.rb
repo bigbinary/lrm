@@ -11,9 +11,9 @@ class AppDelegate
   # rake PART=1
   def klass
     part = ENV['PART']
+      part = '6'
     if part.nil?
       puts "using default part"
-      part = '5'
     else
       puts "using part #{part}"
     end
@@ -32,6 +32,9 @@ class AppDelegate
     when '5'
       StandardAppearance.set_named_fonts_and_colors
       Loginv5Controller
+    when '6'
+      StandardAppearance.set_named_fonts_and_colors
+      Loginv6Controller
     end
   end
 
