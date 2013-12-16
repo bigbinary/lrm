@@ -8,7 +8,7 @@ class AppDelegate
 
   # Usage
   #
-  # rake PART=1
+  # PART=1 rake
   def klass
     part = ENV['PART']
     if part.nil?
