@@ -11,11 +11,11 @@ class AppDelegate
   # rake PART=1
   def klass
     part = ENV['PART']
-      part = '6'
     if part.nil?
-      puts "using default part"
+      part = '6'
+      puts "using default part: #{part}"
     else
-      puts "using part #{part}"
+      puts "using part: #{part}"
     end
 
     case part
