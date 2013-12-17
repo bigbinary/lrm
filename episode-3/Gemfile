@@ -4,5 +4,7 @@ gem 'rake'
 gem 'ruby_motion_query', github: 'infinitered/rmq'
 gem 'motion-support'
 gem 'bubble-wrap'
+gem 'cocoapods-core'
+gem "motion-cocoapods"
 
 # Add your dependencies here:

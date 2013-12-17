@@ -8,7 +8,10 @@ begin
 rescue LoadError
 end
 
+require 'bubble-wrap/mail'
+
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'lrm'
+  #app.frameworks += ['MessageUI']
 end

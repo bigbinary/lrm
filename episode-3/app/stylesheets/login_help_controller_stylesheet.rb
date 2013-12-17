@@ -51,7 +51,7 @@ class LoginHelpControllerStylesheet < ApplicationStylesheet
     st.text = 'Send me reset instructions'
   end
 
-  def cancel_button(st)
+  def go_back_to_login_button(st)
     standard_button_as_link st
     fields st
     st.frame = {t: 212}
