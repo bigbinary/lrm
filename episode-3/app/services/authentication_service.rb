@@ -15,15 +15,26 @@ class AuthenticationService
   end
 
   def process
+    show_spinner
+
     payload = BW::JSON.generate(hash)
     headers = { 'Content-Type' => 'application/json' }
 
     BW::HTTP.post(API_LOGIN_END_POINT, { headers: headers, payload: payload } ) do |response|
+      hide_spinner
       handle_response response
     end
   end
 
   private
+
+  def hide_spinner
+    SVProgressHUD.dismiss
+  end
+
+  def show_spinner
+    SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
+  end
 
   def handle_response response
     puts response.body.to_s
