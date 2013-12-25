@@ -2,6 +2,10 @@
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 
+version = `motion -v`
+puts "RubyMotion version: #{version}"
+puts ''
+
 begin
   require 'bundler'
   Bundler.require
