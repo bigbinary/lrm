@@ -8,14 +8,6 @@ class LanguagesService
     Language.order(:name).all
   end
 
-  def static
-    Language.order(:name).where(:static).eq('true')
-  end
-
-  def dynamic
-    Language.order(:name).where(:dynamic).eq('true')
-  end
-
   private
 
   def build_languages
@@ -50,9 +42,7 @@ class LanguagesService
     )
 
     b = array.map { |r| self.send r.intern }
-    puts b.inspect
     b.each do |language|
-      puts language[:name]
       Language.create language
     end
   end
