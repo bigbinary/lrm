@@ -1,0 +1,135 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<constant const='true' declared_type='NSString*' name='SVProgressHUDDidAppearNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='SVProgressHUDDidDisappearNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='SVProgressHUDDidReceiveTouchEventNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='SVProgressHUDStatusUserInfoKey' type='@'/>
+<constant const='true' declared_type='NSString*' name='SVProgressHUDWillAppearNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='SVProgressHUDWillDisappearNotification' type='@'/>
+<enum name='SVProgressHUDMaskTypeBlack' value='3'/>
+<enum name='SVProgressHUDMaskTypeClear' value='2'/>
+<enum name='SVProgressHUDMaskTypeGradient' value='4'/>
+<enum name='SVProgressHUDMaskTypeNone' value='1'/>
+<class name='SVProgressHUD'>
+<method class_method='true' selector='dismiss'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='hudBackgroundColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='hudErrorImage'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method selector='hudFont'>
+<retval declared_type='UIFont*' type='@'/>
+</method>
+<method selector='hudForegroundColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='hudRingBackgroundColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='hudRingForegroundColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='hudStatusShadowColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='hudSuccessImage'>
+<retval declared_type='UIImage*' type='@'/>
+</method>
+<method class_method='true' selector='isVisible'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method class_method='true' selector='popActivity'>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='resetOffsetFromCenter'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudBackgroundColor:'>
+<arg declared_type='UIColor*' index='0' name='hudBackgroundColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudErrorImage:'>
+<arg declared_type='UIImage*' index='0' name='hudErrorImage' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudFont:'>
+<arg declared_type='UIFont*' index='0' name='hudFont' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudForegroundColor:'>
+<arg declared_type='UIColor*' index='0' name='hudForegroundColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudRingBackgroundColor:'>
+<arg declared_type='UIColor*' index='0' name='hudRingBackgroundColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudRingForegroundColor:'>
+<arg declared_type='UIColor*' index='0' name='hudRingForegroundColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudStatusShadowColor:'>
+<arg declared_type='UIColor*' index='0' name='hudStatusShadowColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHudSuccessImage:'>
+<arg declared_type='UIImage*' index='0' name='hudSuccessImage' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='setOffsetFromCenter:'>
+<arg declared_type='UIOffset' index='0' name='offset' type='{UIOffset=ff}' type64='{UIOffset=dd}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='setStatus:'>
+<arg declared_type='NSString*' index='0' name='string' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='show'>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showErrorWithStatus:'>
+<arg declared_type='NSString*' index='0' name='string' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showImage:status:'>
+<arg declared_type='UIImage*' index='0' name='image' type='@'/>
+<arg declared_type='NSString*' index='1' name='status' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showProgress:'>
+<arg declared_type='float' index='0' name='progress' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showProgress:status:'>
+<arg declared_type='float' index='0' name='progress' type='f'/>
+<arg declared_type='NSString*' index='1' name='status' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showProgress:status:maskType:'>
+<arg declared_type='float' index='0' name='progress' type='f'/>
+<arg declared_type='NSString*' index='1' name='status' type='@'/>
+<arg declared_type='SVProgressHUDMaskType' index='2' name='maskType' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showSuccessWithStatus:'>
+<arg declared_type='NSString*' index='0' name='string' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showWithMaskType:'>
+<arg declared_type='SVProgressHUDMaskType' index='0' name='maskType' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showWithStatus:'>
+<arg declared_type='NSString*' index='0' name='status' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method class_method='true' selector='showWithStatus:maskType:'>
+<arg declared_type='NSString*' index='0' name='status' type='@'/>
+<arg declared_type='SVProgressHUDMaskType' index='1' name='maskType' type='I' type64='Q'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+</signatures>
