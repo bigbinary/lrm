@@ -8,7 +8,7 @@ class BackspaceDetectingUITextField < UITextField
     end
   end
 
-  def massage
+  def sanitize_data
     if text.size > 1
       self.text = text[text.size - 1, 1]
     end
@@ -35,22 +35,21 @@ class LockScreen < UIView
     @digit3 = @digit_block.append(BackspaceDetectingUITextField, :lock_screen_digit_3)
     @digit4 = @digit_block.append(BackspaceDetectingUITextField, :lock_screen_digit_4)
 
-    @digits = [@digit1, @digit2, @digit3, @digit4]
-
     bind_fields_to_events
   end
 
   def bind_fields_to_events
-    setup_pair(@digit1, @digit2)
-    setup_pair(@digit2, @digit3)
-    setup_pair(@digit3, @digit4)
-    @digit1.get.becomeFirstResponder
+    setup_pair(digit1, digit2)
+    setup_pair(digit2, digit3)
+    setup_pair(digit3, digit4)
+
+    digit1.get.becomeFirstResponder
   end
 
 
   def setup_pair(left, right)
     left.on(:change) do |field| 
-      field.massage
+      field.sanitize_data
       right.get.becomeFirstResponder unless field.text == ""
     end
 
@@ -61,6 +60,4 @@ class LockScreen < UIView
     end
   end
 
-
 end
-
