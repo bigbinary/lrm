@@ -36,6 +36,29 @@ class LockScreen < UIView
     @digit4 = @digit_block.append(BackspaceDetectingUITextField, :lock_screen_digit_4)
 
     @digits = [@digit1, @digit2, @digit3, @digit4]
+
+    bind_fields_to_events
+  end
+
+  def bind_fields_to_events
+    setup_pair(@digit1, @digit2)
+    setup_pair(@digit2, @digit3)
+    setup_pair(@digit3, @digit4)
+    @digit1.get.becomeFirstResponder
+  end
+
+
+  def setup_pair(left, right)
+    left.on(:change) do |field| 
+      field.massage
+      right.get.becomeFirstResponder unless field.text == ""
+    end
+
+    right.get.on_backspace do |field| 
+      field.text = ""
+      left.get.text = ""
+      left.get.becomeFirstResponder
+    end
   end
 
 
