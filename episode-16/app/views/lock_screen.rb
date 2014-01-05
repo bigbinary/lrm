@@ -40,10 +40,10 @@ class LockScreen < UIView
     bind_fields_to_events
   end
 
-  #def reset_screen
-    #digits.each { |d| clear_digit(d) }
-    #bind_fields_to_events
-  #end
+  def reset_screen
+    digits.each { |d| clear_digit(d) }
+    bind_fields_to_events
+  end
 
   private
 

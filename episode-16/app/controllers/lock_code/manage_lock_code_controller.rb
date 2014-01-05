@@ -32,9 +32,9 @@ class ManageLockCodeController < UIViewController
     self
   end
 
-  #def viewDidAppear(animated)
-    #@lock_screen.reset_screen
-  #end
+  def viewDidAppear(animated)
+    @lock_screen.reset_screen
+  end
  
   def viewDidLoad
     super
