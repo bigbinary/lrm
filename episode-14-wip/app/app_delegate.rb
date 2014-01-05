@@ -30,5 +30,4 @@ class AppDelegate
     tabbar
   end
 
-
 end

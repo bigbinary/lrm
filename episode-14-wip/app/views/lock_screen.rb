@@ -13,8 +13,6 @@ class LockScreen < UIView
     @digit2 = @digit_block.append(UITextField, :lock_screen_digit_2)
     @digit3 = @digit_block.append(UITextField, :lock_screen_digit_3)
     @digit4 = @digit_block.append(UITextField, :lock_screen_digit_4)
-
-    @digits = [@digit1, @digit2, @digit3, @digit4]
   end
 
 end
