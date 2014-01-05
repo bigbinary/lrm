@@ -21,7 +21,7 @@ end
 
 class LockScreen < UIView
 
-  attr_reader :rmq, :digit1, :digit2, :digit3, :digit4, :label
+  attr_reader :rmq, :digit1, :digit2, :digit3, :digit4, :label, :digits
   attr_accessor :text, :action_on_last_button
 
   def style_for_controller(controller)
@@ -40,6 +40,13 @@ class LockScreen < UIView
     bind_fields_to_events
   end
 
+  #def reset_screen
+    #digits.each { |d| clear_digit(d) }
+    #bind_fields_to_events
+  #end
+
+  private
+
   def bind_fields_to_events
     setup_pair(digit1, digit2)
     setup_pair(digit2, digit3)
@@ -55,7 +62,6 @@ class LockScreen < UIView
     digit1.get.becomeFirstResponder
   end
 
-
   def setup_pair(left, right)
     left.on(:change) do |field| 
       field.sanitize_data
@@ -67,6 +73,11 @@ class LockScreen < UIView
       left.get.text = ""
       left.get.becomeFirstResponder
     end
+  end
+
+  def clear_digit(digit)
+    digit.off(:change)
+    digit.get.text = ""
   end
 
 end
