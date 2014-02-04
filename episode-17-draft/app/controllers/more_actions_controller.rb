@@ -66,7 +66,7 @@ class MoreActionsController < BaseLanguagesController
 
     case text 
     when CLEAR_LOCK_CODE_TEXT
-      App.alert 'clear lock code functionality is coming up'
+      handle_clearing_lock_code indexPath
 
     when SET_LOCK_CODE_TEXT 
       self.navigationController.pushViewController(ManageLockCodeController.alloc.initAndSetCode, animated: true)
@@ -80,6 +80,12 @@ class MoreActionsController < BaseLanguagesController
   end
 
   private
+
+  def handle_clearing_lock_code indexPath
+    LockCode.set nil
+    App.alert 'Lock code has been cleared'
+    view.reloadData
+  end
 
   def display_non_version_section indexPath, cell
     case indexPath.row
