@@ -12,6 +12,7 @@ class MoreActionsController < BaseLanguagesController
 
   CLEAR_LOCK_CODE_TEXT = "Clear Lock Code"
   SET_LOCK_CODE_TEXT = 'Set Lock Code'
+  CHANGE_LOCK_CODE_TEXT = 'Change Lock Code'
   LOGOUT_TEXT = 'Logout'
 
   def init
@@ -24,6 +25,10 @@ class MoreActionsController < BaseLanguagesController
 
   def viewDidLoad
     super
+  end
+
+  def viewDidAppear animated
+    view.reloadData
   end
 
   def numberOfSectionsInTableView tableView
@@ -71,6 +76,9 @@ class MoreActionsController < BaseLanguagesController
     when SET_LOCK_CODE_TEXT 
       self.navigationController.pushViewController(ManageLockCodeController.alloc.initAndSetCode, animated: true)
 
+    when CHANGE_LOCK_CODE_TEXT 
+      self.navigationController.pushViewController(ManageLockCodeController.alloc.initAndChangeCode, animated: true)
+
     when LOGOUT_TEXT
       App.alert 'logout functionality is coming up'
 
@@ -90,7 +98,7 @@ class MoreActionsController < BaseLanguagesController
   def display_non_version_section indexPath, cell
     case indexPath.row
     when LOCK_CODE_ROW_NUMBER
-      cell.textLabel.text = SET_LOCK_CODE_TEXT
+      cell.textLabel.text = LockCode.enabled? ? CHANGE_LOCK_CODE_TEXT : SET_LOCK_CODE_TEXT
       cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
 
     when CLEAR_CODE_ROW_NUMBER

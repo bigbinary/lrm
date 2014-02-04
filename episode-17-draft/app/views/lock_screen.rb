@@ -45,6 +45,26 @@ class LockScreen < UIView
     bind_fields_to_events
   end
 
+  def flash_background
+    rmq.animate(
+      duration: 0.1,
+      animations: -> (rmq) {
+        rmq.style do |st|
+          st.background_color = rmq.color.red
+        end
+      },
+      completion: -> (did_finish, rmq) {
+        rmq.animate(
+          duration: 4,
+          options: UIViewAnimationOptionCurveEaseOut,
+          animations: -> (rmq) {
+            rmq.style do |st|
+              st.background_color = rmq.color.white
+            end
+          })
+      })
+  end
+
   private
 
   def bind_fields_to_events
