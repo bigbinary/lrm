@@ -44,7 +44,7 @@ class ScreenLockController < UIViewController
   def upon_failure lock_screen
     lock_screen.label.get.text = TRY_AGAIN_TEXT
     lock_screen.flash_background
-    if @attempts > 5
+    if @attempts > 1
       logout
       @attempts = 0
     else
@@ -63,6 +63,10 @@ class ScreenLockController < UIViewController
       App.window.rootViewController = @saved_view_controller
       @saved_view_controller = nil
     end
+  end
+
+  def logout
+    App.alert "In a real application you will be logged out"
   end
 
 end
