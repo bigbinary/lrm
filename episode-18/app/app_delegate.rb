@@ -6,6 +6,8 @@ class AppDelegate
 
     StandardAppearance.apply
 
+    setup_lock_screen
+
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = build_tabbar
 
@@ -15,7 +17,15 @@ class AppDelegate
     true
   end
 
+  def applicationWillEnterForeground app
+    @screen_lock_controller.lock_the_screen
+  end
+
   private
+
+  def setup_lock_screen
+    @screen_lock_controller = ScreenLockController.alloc.initWithText("Enter code to unlock")
+  end
 
   def build_tabbar
     tabbar = UITabBarController.alloc.init

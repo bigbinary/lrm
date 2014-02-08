@@ -102,6 +102,7 @@ class StandardAppearance
       font.add_named :huge,           font_family_large, 48
       font.add_named :larger,         font_family, 30
       font.add_named :large,          font_family, 20
+      font.add_named :large_bolder,   'HelveticaNeue', 20
       font.add_named :medium,         font_family, 16
       font.add_named :small,          font_family, 12
       font.add_named :tiny,           font_family, 9
