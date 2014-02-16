@@ -2,13 +2,15 @@ class AppDelegate
 
   attr_reader :language_service
 
+  LOCK_TIME = 10.seconds.to_f
+
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
     StandardAppearance.apply
 
     setup_lock_screen
 
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    @window = IdlingWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = build_tabbar
 
     @language_service = LanguagesService.new
@@ -25,6 +27,12 @@ class AppDelegate
 
   def setup_lock_screen
     @screen_lock_controller = ScreenLockController.alloc.initWithText("Enter code to unlock")
+
+    App.notification_center.observe(IdlingWindow::BECAME_IDLE, @window) do |_|
+      @screen_lock_controller.lock_the_screen
+    end
+
+    @window.set_idle_timeout_seconds LOCK_TIME
   end
 
   def build_tabbar
