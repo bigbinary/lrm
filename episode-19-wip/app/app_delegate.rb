@@ -2,15 +2,16 @@ class AppDelegate
 
   attr_reader :language_service
 
-  LOCK_TIME = 10.seconds.to_f
+  LOCK_TIME = 10
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 
     StandardAppearance.apply
 
+    @window = IdlingWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+
     setup_lock_screen
 
-    @window = IdlingWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     @window.rootViewController = build_tabbar
 
     @language_service = LanguagesService.new
