@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/ios'
+
+version = `motion --version`; puts "RubyMotion version: #{version}"; puts ''
+
+begin
+  require 'bundler'
+  Bundler.require
+rescue LoadError
+end
+
+require 'bubble-wrap/reactor'
+
+Motion::Project::App.setup do |app|
+  # Use `rake config' to see complete project settings.
+  app.name = 'lrm'
+end
