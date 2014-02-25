@@ -2,7 +2,7 @@ class AppDelegate
 
   attr_reader :language_service
 
-  LOCK_TIME = 10
+  LOCK_TIME = 5 * 60
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
 

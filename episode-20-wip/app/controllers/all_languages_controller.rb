@@ -23,6 +23,20 @@ class AllLanguagesController < BaseLanguagesController
     super
   end
 
+  def tableView(tableView, didSelectRowAtIndexPath: indexPath)
+    language_name = @keys[indexPath.row]
+
+    controller = load_controller(language_name)
+    self.navigationController.pushViewController(controller, animated:true)
+
+    tableView.deselectRowAtIndexPath(indexPath, animated:true)
+  end
+
+  private
+
+  def load_controller language_name
+    LanguageDetailsController.alloc.initWithLanguage(language_name)
+  end
 
 end
 
