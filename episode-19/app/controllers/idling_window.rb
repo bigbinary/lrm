@@ -1,6 +1,7 @@
 # This is how this class works.
 #
-# A timer is set when application boots and whenver a user event is detected. That timer will invoke method to lock the screen based on LOCK_TIME.
+# A timer is set when application boots and whenver a user event is detected. 
+# That timer will invoke method to lock the screen based on LOCK_TIME.
 # The only way to cancel that operation is to cancel the timer before the screen is locked.
 #
 # That timer is cancelled anytime a user event is detected.
@@ -79,5 +80,3 @@ class IdlingWindow < UIWindow
   end
 
 end
-
-
